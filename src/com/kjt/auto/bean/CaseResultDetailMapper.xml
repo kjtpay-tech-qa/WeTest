@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjt.auto.bean.CaseResultDetailMapper">
+	<sql id="tb_case_result">
+		cr.case_result, cr.gmt_create, cr.gmt_update
+	</sql>
+	<sql id="tb_case_detail">
+		cd.test_suite_id, cd.case_description, cd.input_params, cd.baseline_params, cd.output_params, cd.case_detail_id
+	</sql>
+
+	<select id="queryCaseResultDetailsByTestSuiteId" resultType="com.kjt.auto.bean.CaseResultDetail" parameterType="java.util.Map">
+		select case_result, gmt_create, gmt_update,test_suite_id, case_description, input_params, baseline_params, output_params,case_detail_id
+		from
+		(
+		select 
+		<include refid="tb_case_result" />
+		,
+		<include refid="tb_case_detail" />
+		from tb_case_result cr left join tb_case_detail cd
+		on cr.case_detail_id = cd.case_detail_id
+		where 1=1
+		<if test="test_suite_id != null">
+			and cd.test_suite_id = #{test_suite_id}
+		</if>
+
+		) t
+		order by case_detail_id asc
+		<if test="startrow != null and pagesize != null">
+			limit #{startrow,jdbcType=INTEGER},#{pagesize,jdbcType=INTEGER}
+		</if>
+		
+	</select>
+
+
+</mapper>

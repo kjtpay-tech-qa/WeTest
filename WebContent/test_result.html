@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<link rel="stylesheet" href="css/query.css" type="text/css"/>-->
+<link rel="stylesheet" href="css/inner.css" type="text/css"/>
+<link rel="shortcut icon"href="img/favicon.ico">
+<script type="text/javascript" src="js/test_result.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>测试记录概览</title>
+</head>
+<body>
+<div><img src="img/fire.png" align="middle" class="fire">
+    <div id="head">
+        <div id="header_main">
+            <div id="logo"><img src="img/logo.jpg"></div>
+            <div id="nav">
+                <div id="username">您好,reader【this.browser】</div>
+                <!--<div class="tab"><a id="testrecord">测试记录</a><a id="testResultinfo"
+                                                               style="border-bottom: 2px solid rgb(51, 136, 255); font-weight: bold; color: rgb(50, 50, 50);">会员信息</a><a
+                        id="messagequery">短信查询</a><a id="signbank">快捷签约</a></div>-->
+                <input id="urlparams" type="hidden">
+				</div>
+        </div>
+        <div id="search_body">
+            <!--<div id="search_body_2">
+              <input name="Input" id="terms" placeholder="会员收支明细查询。请输入会员id或者会员登录名。">
+              <select id="tips">
+                <option value="准生产">准生产</option>
+                <option value="测试">测试</option>
+                <option value="测试二">测试二</option>
+                <option value="生产">生产</option>
+          </select><input id="search" value="查询" type="button"></div>-->
+            <a id="notice">[公告]</a><a id="export">[导出成xlsx]</a><img id="exportimg" src="img/export.jpg"></div>
+    </div>
+    <div id="record">
+        <div class="content-box"></div>
+		<div class="recodeTable" style="width:700px; height:225px; overflow:scroll">
+			<table class="bordered">
+				<thead>
+				<tr>
+					<th id="test_id">序号</th>
+					<th id="test_purposes">测试目的</th>
+					<th id="test_result">测试结果</th>
+					<th id="test_time">测试时间</th>
+					<th id="test_operation">操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="test_id">1</td>
+					<td id="test_purposes"><a href="http://192.168.180.52:8080/browse/TES-31">http://192.168.180.52:8080/browse/TES-31</a></td>
+					<td id="result">passed</td>
+					
+					<td id="test_time">2017/09/01</td>
+					<td id="operation">
+						<a href="#" onclick="testSuiteResult(1);">详细</a>						
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+    </div>
+    <div class="footer">
+        <!--<div class="footmenu"><input id="pageTxt" value="1">
+            <button onclick="pageto()" class="pagebtn">GO</button>
+            <button id="pagedown" class="pagebtn">下翻&gt;</button>
+        </div>-->
+
+        <div class="footmenu">
+            <a id="btn0"></a>
+            <input id="pageSize" type="text" size="1" maxlength="2" value="getDefaultValue()"/><a> 条 </a> <a href="#" id="pageSizeSet">设置</a>
+            <a id="sjzl"></a>
+            <a href="#" id="btn1">首页</a>
+            <a href="#" id="btn2">上一页</a>
+            <a href="#" id="btn3">下一页</a>
+            <a href="#" id="btn4">尾页</a>
+            <a>转到 </a>
+            <input id="changePage" type="text" size="1" maxlength="4"/>
+            <a>页 </a>
+            <a href="#" id="btn5">跳转</a>
+		</div>
+    </div>
+    <div class="foot"></div>
+</div>
+</body>
+</html>

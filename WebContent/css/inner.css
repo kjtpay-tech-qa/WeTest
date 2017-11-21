@@ -1,0 +1,311 @@
+head,.foot{
+    width:100%;
+    position: fixed;
+}
+
+
+.fire{
+    position: fixed;
+    left: 20%;
+    z-index:-1;
+    opacity: 0.5
+    
+}
+
+body {
+    /* margin: 50px auto; */
+    /* font-family: 'trebuchet MS', 'Lucida sans', Arial; */
+    font-size: 14px;
+    color: #444;
+    background-image: url(../img/body.gif);
+    background-position: left bottom;
+
+    font-family: -apple-system,Helvetica,'Hiragino Sans GB W3','Microsoft YaHei',arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    
+    width: 100%;
+	height: 500px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	
+	
+
+}
+body,#tips,#search,li,input,a,.pagebtn{
+    cursor:url('../img/cur1.ico'),pointer;
+}
+
+body:active,td:active,img:active,#tips:active,#search:active,li:active,a:active,input:active,.pagebtn:active {
+    cursor:url('../img/cur2.ico'),pointer;
+}
+
+
+/* .content-box {
+	top: 2%;
+	left: 0;
+	height: 22px;
+	background: url(../img/colname.png) repeat-x;
+	border-bottom: #09a800 solid 1px;
+} */
+
+.main {	
+	width: 100%;
+	position:relative;
+	
+}
+.recodeTable {
+    display: block;
+    table-layout: fixed;
+    position:relative;
+    overflow: hidden;
+    
+    
+}
+
+#test_id{
+	width: 5%;
+}
+#service_name, #interface_name {
+	width: 15%;
+}
+#environment, #operator{
+	width:10%;
+}
+#suite_result, #passed_rate {
+	width: 5%;
+}
+#gmt_create, #gmt_update, #test_purpose {
+	width: 10%;
+}
+#suite_operation {
+	width:5%;
+}
+
+
+#test_suite_id{
+	width: 5%;
+}
+#case_description{
+	width: 10%;
+}
+#input_params{
+	width: 20%;
+}
+#baseline_params, #output_params{
+	width: 25%;
+}
+#case_result{
+	width: 5%;
+}
+#gmt_update{
+	width: 10%;
+}
+
+table {
+    /**border-collapse: collapse; !* IE7 and lower *!*/
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    /*设置相邻单元格的边框间的距离*/
+    border-spacing: 0;
+    /*表格设置合并边框模型*/
+    border-collapse: collapse;
+    text-align: center;
+	
+	/* border: 1; */
+	
+	table-layout: fixed;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+/*关键设置 tbody出现滚动条*/
+table tbody {
+    display: block;
+    
+    display: table-row-group;
+/*    overflow-y: auto;
+	overflow-x: hidden; 
+	scrollbar-face-color: #fef0c2;*/
+}
+/*table tr th:first-child, table tr td:first-child{
+	width:5%;
+}*/
+
+table thead,tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+/*关键设置：滚动条默认宽度是16px 将thead的宽度减16px*/
+/* table thead {
+    width: calc( 100% - 1em)
+} */
+
+table thead th {
+    background: #fbf8e9;
+}
+th,td{
+    word-break: break-all;
+    white-space:normal;
+    text-overflow:clip;
+
+}
+
+.bordered {
+	position:relative;
+    margin: 2%;
+    padding: 2%;
+    
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc;
+    -moz-box-shadow: 0 1px 1px #ccc;
+    box-shadow: 0 1px 1px #ccc;
+    
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.bordered th {
+    background-color: #31e34d;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fef0c2), to(#31e34d));
+    background-image: -webkit-linear-gradient(top, #fef0c2, #31e34d);
+    background-image:    -moz-linear-gradient(top, #fef0c2, #31e34d);
+    background-image:     -ms-linear-gradient(top, #fef0c2, #31e34d);
+    background-image:      -o-linear-gradient(top, #fef0c2, #31e34d);
+    background-image:         linear-gradient(top, #fef0c2, #31e34d);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+
+
+
+
+
+
+/* .corner {
+    position: relative;
+    width: 96%;
+    margin-left: 5%;
+} */
+
+
+.footer {
+    height: auto;
+    bottom: 15%;
+    margin-left:auto;
+    margin-right: auto;
+    left:40%;
+}
+.footmenu {
+    position:fixed;
+}
+#pageTxt {
+    opacity: 0.7;
+    width: 36px;
+    height: 28px;
+    margin-right: 5px;
+    text-align: center;
+}
+.pagebtn {
+    opacity: 0.7;
+    height: 28px;
+    width: 50px;
+    font: 14px arial;
+    margin-right: 5px;
+    margin-top: 5px;
+    background: url("../img/body.gif");
+}
+
+.foot {
+    z-index: -2;
+    bottom: 0;
+    height: 55px;
+    background: #FEFEF2 url("../img/foot.gif") top left repeat-x;
+}
+
+body, div, span, ul, li, button, input, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(92,131,239,.77);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(235,87,86,.73);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+::selection {
+    color: #fff;
+    background-color: #08c;
+}

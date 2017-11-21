@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kjt.auto.bean.TestSuiteResultMapper">
+	<sql id="tb_test_result">
+		tr.test_id, tr.result, tr.test_purpose, tr.operator, tr.gmt_create, tr.gmt_update
+	</sql>
+	<sql id="tb_test_suite_result">
+		tsr.test_suite_id, tsr.suite_result, tsr.passed_cases, tsr.executed_cases, tsr.total_cases,  tsr.passed_rate
+	</sql>
+	<sql id="tb_test_suite">
+		ts.service_name, ts.interface_name, ts.suite_file, ts.environment
+	</sql>
+
+	<select id="queryResultDetailsByTestPurposeAndOperator" resultType="com.kjt.auto.bean.TestResultDetail" parameterType="java.util.Map">
+		select test_id,result,test_purpose,operator,gmt_create,gmt_update, test_suite_id,suite_result,passed_cases,executed_cases,total_cases,passed_rate,service_name,interface_name,suite_file,environment
+		from
+		(
+		select 
+		<include refid="tb_test_result" />
+		,
+		<include refid="tb_test_suite_result" />
+		,
+		<include refid="tb_test_suite" />
+		from tb_test_result tr left join tb_test_suite ts
+		on tr.test_id = ts.test_id
+		left join tb_test_suite_result tsr
+		on ts.test_suite_id = tsr.test_suite_id
+		where 1=1
+		<if test="test_purpose != null">
+			and tr.test_purpose = #{test_purpose}
+		</if>
+		<if test="operator != null">
+			and tr.operator = #{operator}
+		</if>
+		) t
+		order by test_id desc
+		<if test="startrow != null and pagesize != null">
+			limit #{startrow,jdbcType=INTEGER},#{pagesize,jdbcType=INTEGER}
+		</if>
+		
+	</select>
+
+
+</mapper>
