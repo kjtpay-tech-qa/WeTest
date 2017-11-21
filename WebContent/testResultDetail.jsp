@@ -40,10 +40,7 @@
 		<div class="recodeTable">
 			<div class="content-box"></div>
 			<table class="recordThead">
-
-
 			</table>
-
 			<table class="bordered">
 				<thead>
 					<tr>
