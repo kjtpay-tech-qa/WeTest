@@ -2,6 +2,12 @@ package com.kjt.auto.bean;
 
 import java.util.Date;
 
+/**
+ * @ClassName CaseResultDetail
+ * @Description 单条用例执行详情
+ * @author libin1@kjtpay.com.cn
+ * @date 2017-11-22
+ */
 public class CaseResultDetail {
 
 	private int test_suite_id;
