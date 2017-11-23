@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kjt.auto.bean.TestSuiteResultMapper">
 	<sql id="tb_test_result">
-		tr.test_id, tr.result, tr.test_purpose, tr.operator, tr.gmt_create, tr.gmt_update
+		tr.test_id, tr.result, tr.test_purpose, tr.operator
 	</sql>
 	<sql id="tb_test_suite_result">
-		tsr.test_suite_id, tsr.suite_result, tsr.passed_cases, tsr.executed_cases, tsr.total_cases,  tsr.passed_rate
+		tsr.test_suite_id, tsr.suite_result, tsr.passed_cases, tsr.executed_cases, tsr.total_cases,  tsr.passed_rate, tsr.gmt_create, tsr.gmt_update
 	</sql>
 	<sql id="tb_test_suite">
 		ts.service_name, ts.interface_name, ts.suite_file, ts.environment
@@ -33,7 +33,7 @@
 			and tr.operator = #{operator}
 		</if>
 		) t
-		order by test_id desc
+		order by test_id desc, gmt_update desc
 		<if test="startrow != null and pagesize != null">
 			limit #{startrow,jdbcType=INTEGER},#{pagesize,jdbcType=INTEGER}
 		</if>
