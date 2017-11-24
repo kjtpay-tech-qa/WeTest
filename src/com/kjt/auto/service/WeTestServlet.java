@@ -34,12 +34,14 @@ public class WeTestServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 //		HttpSession session = request.getSession();
 		String test_purpose = request.getParameter("test_purpose");
 		String operator = request.getParameter("operator");
+		@SuppressWarnings("rawtypes")
 		Map map = new HashMap<>();
 		map.put("test_purpose", test_purpose);
 		map.put("operator", operator);

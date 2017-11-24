@@ -20,5 +20,5 @@ public interface CaseResultDetailDao {
 	 * @param @return 
 	 * @return List<CaseResultDetail>
 	 */
-	List<CaseResultDetail> queryCaseResultDetailsByTestSuiteId(Map map);
+	List<CaseResultDetail> queryCaseResultDetailsByTestSuiteId(@SuppressWarnings("rawtypes") Map map);
 }

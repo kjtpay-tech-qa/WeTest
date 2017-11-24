@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.kjt.auto.bean.CaseResultDetail;
 import com.kjt.auto.dao.CaseResultDetailDao;
@@ -38,11 +37,13 @@ public class CaseResultDetailServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 //		HttpSession session = request.getSession();
 		String test_suite_id = request.getParameter("test_suite_id");
+		@SuppressWarnings("rawtypes")
 		Map map = new HashMap<>();
 		map.put("test_suite_id", test_suite_id);
 		int pageindex = 1;
@@ -57,7 +58,6 @@ public class CaseResultDetailServlet extends HttpServlet {
 			String output_params = caseResultDetail.getOutput_params();
 			String baseline_params = caseResultDetail.getBaseline_params();
 			
-			Feature features;
 			input_params = JSON.toJSONString(JSON.parseObject(input_params), SerializerFeature.PrettyFormat);
 			output_params = JSON.toJSONString(JSON.parseObject(output_params), SerializerFeature.PrettyFormat);
 			baseline_params = JSON.toJSONString(JSON.parseObject(baseline_params), SerializerFeature.PrettyFormat);

@@ -13,7 +13,7 @@ import com.kjt.auto.util.MyBatisUtil.DataSourceEnvironment;
 public class CaseResultDetailDaoImpl implements CaseResultDetailDao {
 
 	@Override
-	public List<CaseResultDetail> queryCaseResultDetailsByTestSuiteId(Map map) {
+	public List<CaseResultDetail> queryCaseResultDetailsByTestSuiteId(@SuppressWarnings("rawtypes") Map map) {
 		DataSourceEnvironment environment = MyBatisUtil.DataSourceEnvironment.WETEST;
 
 		SqlSession session = null;  

@@ -13,6 +13,6 @@ public interface TestSuiteResultDao {
 	 * @param @return 
 	 * @return List<TestResultDetail>
 	 */
-	List<TestResultDetail> queryResultDetailsByTestPurposeAndOperator(Map map);
+	List<TestResultDetail> queryResultDetailsByTestPurposeAndOperator(@SuppressWarnings("rawtypes") Map map);
 	
 }
