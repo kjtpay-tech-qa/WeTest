@@ -32,6 +32,9 @@
 		<if test="operator != null">
 			and tr.operator = #{operator}
 		</if>
+		<if test="test_id != null">
+			and tr.test_id = #{test_id}
+		</if>
 		) t
 		order by test_id desc, gmt_update desc
 		<if test="startrow != null and pagesize != null">
